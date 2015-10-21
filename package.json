@@ -1,0 +1,20 @@
+{
+  "name": "React",
+  "version": "0.0.1",
+  "description": "Initial react test",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmadrigalac/ReactExamples.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmadrigalac/ReactExamples/issues"
+  },
+  "dependencies": {
+    "react": "~0.14.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "React",
+  "version": "0.0.1",
+  "authors": [
+    "Mario Madrigal <Mmadrigal01@hotmail.com>"
+  ],
+  "description": "React Example implementation",
+  "keywords": [
+    "ReactJs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.0"
+  }
+}
