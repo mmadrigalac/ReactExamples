@@ -3,89 +3,21 @@
 	<title> React</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+	<style type="text/css">
+		.panel img{
+			width: 100px;
+		}
+	</style>
 </head>
 <body>
 
-	<div id="content"></div>
-	<div id="content2"></div>
-
-	<script type="text/javascript" src="bower_components/react/react.min.js"></script>
-	<script type="text/javascript" src="bower_components/react/react-dom.min.js"></script>
+	<div id="panels"></div>
 	
-
-	<script type="text/babel">
-			let lista =[
-				["task1","task2","task3"],
-				["done","done2","done3"],
-				["missing1","missing2","missing3"],
-				["missing1","missing2","missing3"],
-				["done","done2","done3"]
-			];
-
-
-			var ListItem = React.createClass({
-				render: function(){
-					return(
-						 <li>{this.props.item}</li>
-						)
-				}
-
-			});
-
-
-
-			var UList = React.createClass({
-			
-			render: function() {
-			    return (
-			    	<div className="panel panel-default">
-  					<div className="panel-body">
-				      <ul className="list-unstyled">
-				      	{
-				        	this.props.list.map((task) =>
-				        	{
-				        		return 	<ListItem item={task} />
-				        			
-				        	})
-				        }
-				      </ul>
-			       </div>
-			      </div>
-			    );
-			  }
-			});
-
-
-     		var CommentBox = React.createClass({
-			
-			render: function() {
-			    return (
-			      <div className="panel panel-default">
-  					<div className="panel-body">
-			      	  	Hello, world! I am a CommentBox.
-			       	 	<br/>
-			       	 	{
-			       	 		this.props.mainlist.map((listRow) =>
-			       	 			{
-			        				return <UList list={listRow} />
-			        					
-			        			}
-			        		)
-			        	}
-			     	 </div>
-			      </div>
-			      	
-			    );
-			  }
-			});
-
-
-		ReactDOM.render(
-		  <CommentBox mainlist={lista} />,
-		  document.getElementById('content')
-		);
-
-    </script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/react/react.min.js"></script>
+	<script type="text/javascript" src="bower_components/react/react-dom.min.js"></script> 
+	<script type="text/javascript" src="bower_components/firebase/firebase.js"></script>
+	<script type="text/javascript" src="bower_components/reactfire/dist/reactfire.min.js"></script>
+	<script type="text/babel" src="components/tutorial.jsx"></script>
 </body>
 </html>
