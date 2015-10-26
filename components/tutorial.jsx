@@ -2,6 +2,7 @@ var PanelDetail = React.createClass({
 	render: function() {
 		var image = "img/" + this.props.image;
 		return (
+			<div className="col-md-4">
 			<div className="panel panel-default">
 				<div className="panel-heading">
 					<div className="row">
@@ -9,8 +10,8 @@ var PanelDetail = React.createClass({
 							{this.props.title}
 						</div>
 						<div className="col-md-6">
-							<span>
-								<img className="img-responsive" src={image} />
+							<span className="pull-right">
+								<img className="img-responsive img-circle" src={image} />
 							</span>
 						</div>
 					</div>
@@ -22,6 +23,7 @@ var PanelDetail = React.createClass({
 					</p>
 				</div>
 			</div>
+		</div>
 			);
 
 	}
@@ -66,31 +68,6 @@ var PanelList = React.createClass({
 	}
 });
 
-var MessageForm = React.createClass({
-
-	render: function(){
-		return (
-		<div>
-			  <div className="form-group">
-			    <label>Titulo</label>
-			    <input id="title" type="text" className="form-control" />
-			  </div>
-			  <div className="form-group">
-			    <label>Imagen</label>
-			    <input id="image" type="text" className="form-control" />
-			  </div> 
-			  <div className="form-group">
-			    <label>Descripcion</label>
-			    <textarea id="description" className="form-control" rows="4"></textarea>
-			  </div>
-			  
-			  <button className="btn btn-default" onClick = {this.addNewPanel}>Submit</button>
-	
-			<PanelList panelGroup={this.props.panelGroup} />
-		</div>
-		)
-	}
-});
 
 var DatabaseConnection = React.createClass({
   mixins: [ReactFireMixin],
@@ -116,25 +93,37 @@ var DatabaseConnection = React.createClass({
 	    document.getElementById('image').value = '';
 	    document.getElementById('description').value = '';
 	},
+
 	render: function(){
 		return (
-			<div>
+		<div className="form-group ">
+			<div className="form-inline form">
 			  <div className="form-group">
 			    <label>Titulo</label>
 			    <input id="title" type="text" className="form-control" />
 			  </div>
+			  &nbsp;
 			  <div className="form-group">
 			    <label>Imagen</label>
-			    <input id="image" type="text" className="form-control" />
+			    <select id="image" type="text" className="form-control" >
+			    	<option value="petunia.jpg">Petunia</option>
+			    	<option value="loto.jpg">Loto</option>
+			    	<option value="margarita.jpg">margarita</option>
+			    	<option value="gerbera.jpg">Gerbera</option>
+			    </select>
 			  </div> 
+			  &nbsp;
 			  <div className="form-group">
 			    <label>Descripcion</label>
-			    <textarea id="description" className="form-control" rows="4"></textarea>
+			    <textarea id="description" className="form-control" rows="1"></textarea>
 			  </div>
-			  
+			  &nbsp;
 			  <button className="btn btn-default" onClick = {this.addNewPanel}>Submit</button>
-	
-			<PanelList panelGroup={this.state.panelGroup} />
+			</div>
+
+			<div className="row">
+				<PanelList panelGroup={this.state.panelGroup} />
+			  </div>
 		</div>)
 	}
 });
